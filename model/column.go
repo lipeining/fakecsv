@@ -4,6 +4,7 @@ package model
 type Column struct {
 	Name     string `json:"name"`
 	Type     string `json:"type"`
+	// Fake     string `json:"fake"`
 	Max      string `json:"max"`
 	Min      string `json:"min"`
 	Default  string `json:"default"`

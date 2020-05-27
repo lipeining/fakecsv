@@ -97,6 +97,8 @@ func randInt64Range(min, max int64) int64 {
 
 // MakeColumnFuncFactory 通用生成一行数据的回调函数
 func MakeColumnFuncFactory(cols []model.Column) func(int) []string {
+	// 对于每一个 column 添加 fake 字段，用于直接调用 gofakeit 的函数即可。
+	// 如何结合对应的 Param Field 等参数进行完美切合 gofakeit 的功能？
 	return func(current int) []string {
 		insertCols := make([]string, 0)
 		for _, column := range cols {
